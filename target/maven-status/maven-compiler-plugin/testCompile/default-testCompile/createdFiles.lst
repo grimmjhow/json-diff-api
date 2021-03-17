@@ -1,0 +1,3 @@
+br/com/waes/json/diff/rest/JsonComparisonRestIT.class
+br/com/waes/json/diff/ApplicationTests.class
+br/com/waes/json/diff/utils/IntegrationBaseTest.class
