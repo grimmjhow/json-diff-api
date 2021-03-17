@@ -80,7 +80,7 @@ class JsonComparisonRestIT extends IntegrationBaseTest {
 
     public static Stream<Arguments> compartionsParams() {
         return Stream.of(
-                Arguments.of(10,"eyJuYW1lIjogImZlbGlwZSBtb250ZWlybyJ9","left"),
+                Arguments.of(10,"eyduYW1lJzonZmVsaXBlIG1vbnRlaXJvJ30=","left"),
                 Arguments.of(10,"eyJuYW1lIjogImZlbGlwZSBtb250ZWlybyJ9","right")
         );
     }

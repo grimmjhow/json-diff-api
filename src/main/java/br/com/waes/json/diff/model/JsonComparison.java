@@ -27,15 +27,18 @@ public class JsonComparison {
     private DiffSide side = DiffSide.NONE;
 
     @EqualsAndHashCode.Exclude
+    private String base64Encode = "";
+
+    @EqualsAndHashCode.Exclude
     private String content = "";
 
-    public boolean isContentEmpty() {
-        return StringUtils.isBlank(content);
+    public boolean isBase64Empty() {
+        return StringUtils.isBlank(base64Encode);
     }
 
     public JsonComparison(long id, DiffSide side, String content) {
         this.id = id;
         this.side = side;
-        this.content = content;
+        this.base64Encode = content;
     }
 }

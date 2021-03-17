@@ -17,8 +17,17 @@ public class JsonDiffReportImpl implements JsonDiffReport {
 
     @Override
     public JsonComparisonReportDto executeJsonComparison(long id) {
-
         Pair<JsonComparison, JsonComparison> leftAndRightSide = this.service.getLeftAndRightSide(id);
+
+        JsonComparison left = leftAndRightSide.getFirst();
+        JsonComparison right = leftAndRightSide.getSecond();
+
+        if(left.iSameContent(right))
+            return JsonComparisonReportDto.builder().build(); //Define where's the difference
+        else if(left.isSameSize(right) && !left.iSameContent(right))
+            return null;
+        else
+            return null;
 
         return null;
     }

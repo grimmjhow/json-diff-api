@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-03-16T22:20:41-0300",
+    date = "2021-03-17T19:56:58-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 15.0.1 (Oracle Corporation)"
 )
 public class JsonComparisonMapperImpl implements JsonComparisonMapper {
@@ -21,6 +21,7 @@ public class JsonComparisonMapperImpl implements JsonComparisonMapper {
 
         jsonComparison.setId( dto.getId() );
         jsonComparison.setSide( dto.getSide() );
+        jsonComparison.setBase64Encode( dto.getBase64Encode() );
         jsonComparison.setContent( dto.getContent() );
 
         return jsonComparison;

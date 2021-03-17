@@ -15,4 +15,6 @@ public class JsonComparisonDto {
     private DiffSide side = NONE;
     @Builder.Default
     private String content = "";
+    @Builder.Default
+    private String base64Encode = "";
 }

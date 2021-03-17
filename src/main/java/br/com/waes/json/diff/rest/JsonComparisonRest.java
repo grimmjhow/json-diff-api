@@ -32,7 +32,7 @@ public class JsonComparisonRest {
 
         JsonComparisonDto jsonComparison = JsonComparisonDto.builder()
                                                 .id(id)
-                                                .content(content)
+                                                .base64Encode(content)
                                                 .side(DiffSide.LEFT).build();
         log.info("method=setLeftDiff - jsonComparisonDto={}",jsonComparison);
 
