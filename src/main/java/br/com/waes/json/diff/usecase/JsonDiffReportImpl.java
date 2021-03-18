@@ -8,6 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
+import static br.com.waes.json.diff.dto.JsonComparisonReportDto.*;
+import static br.com.waes.json.diff.model.ComparisonStatus.*;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -22,13 +25,20 @@ public class JsonDiffReportImpl implements JsonDiffReport {
         JsonComparison left = leftAndRightSide.getFirst();
         JsonComparison right = leftAndRightSide.getSecond();
 
-        if(left.iSameContent(right))
-            return JsonComparisonReportDto.builder().build(); //Define where's the difference
-        else if(left.isSameSize(right) && !left.iSameContent(right))
-            return null;
+        if(!left.isSameSize(right))
+            return builder()
+                    .status(EQUAL)
+                    .left(left)
+                    .right(right).build();
+        else if(!left.isSameContent(right))
+            return builder()
+                    .status(DIFFERENT_SIZE)
+                    .left(left)
+                    .right(right).build();
         else
-            return null;
-
-        return null;
+            return builder()
+                    .status(DIFFERENT_CONTENT)
+                    .left(left)
+                    .right(right).build();
     }
 }

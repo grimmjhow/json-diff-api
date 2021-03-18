@@ -29,8 +29,7 @@ public class JsonDiffServiceImpl implements JsonDiffService {
         log.info("method=saveIfNotExists jsonComparison={}", jsonComparison);
 
         JsonElement jsonElement = this.validateJsonComparison(jsonComparison);
-
-        jsonComparison.setContent(jsonElement);
+        jsonComparison.setJson(jsonElement);
 
         return this.repository.save(jsonComparison);
     }

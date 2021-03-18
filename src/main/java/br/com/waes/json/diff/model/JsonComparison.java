@@ -1,5 +1,7 @@
 package br.com.waes.json.diff.model;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -32,6 +34,9 @@ public class JsonComparison {
     @EqualsAndHashCode.Exclude
     private String content = "";
 
+    @EqualsAndHashCode.Exclude
+    private JsonElement json;
+
     public boolean isBase64Empty() {
         return StringUtils.isBlank(base64Encode);
     }
@@ -40,5 +45,17 @@ public class JsonComparison {
         this.id = id;
         this.side = side;
         this.base64Encode = content;
+    }
+
+    public boolean isSameSize(JsonComparison other) {
+        return getContent().length() == other.getContent().length();
+    }
+
+    public boolean isSameContent(JsonComparison right) {
+        return json.equals(right.getJson());
+    }
+
+    public String getContent() {
+        return this.json.getAsString();
     }
 }
