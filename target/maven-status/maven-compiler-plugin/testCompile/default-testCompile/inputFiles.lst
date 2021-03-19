@@ -1,3 +1,7 @@
+/home/fmonteiro/git/json-diff-api/src/test/java/br/com/waes/json/diff/services/JsonDiffServiceImplTest.java
+/home/fmonteiro/git/json-diff-api/src/test/java/br/com/waes/json/diff/utils/BaseTest.java
+/home/fmonteiro/git/json-diff-api/src/test/java/br/com/waes/json/diff/services/Base64ServiceImplTest.java
+/home/fmonteiro/git/json-diff-api/src/test/java/br/com/waes/json/diff/usecase/JsonDiffReportImplTest.java
 /home/fmonteiro/git/json-diff-api/src/test/java/br/com/waes/json/diff/rest/JsonComparisonRestIT.java
 /home/fmonteiro/git/json-diff-api/src/test/java/br/com/waes/json/diff/utils/IntegrationBaseTest.java
 /home/fmonteiro/git/json-diff-api/src/test/java/br/com/waes/json/diff/ApplicationTests.java

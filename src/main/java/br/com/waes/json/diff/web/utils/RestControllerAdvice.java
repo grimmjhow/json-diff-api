@@ -1,6 +1,7 @@
 package br.com.waes.json.diff.web.utils;
 
 import br.com.waes.json.diff.exceptions.BusinessException;
+import com.google.gson.JsonSyntaxException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,6 +20,13 @@ public class RestControllerAdvice {
     @ExceptionHandler(value = {BusinessException.class})
     public DefaultResponse genericBusinessException(HttpServletRequest request, BusinessException ex) {
         return DefaultResponse.invalidResponse(ex.getMessage(),BAD_REQUEST);
+    }
+
+    @ResponseBody
+    @ExceptionHandler(value = {JsonSyntaxException.class})
+    public DefaultResponse jsonSyntaxException(HttpServletRequest request, JsonSyntaxException ex) {
+        log.error("method=jsonSyntaxException message={}",ex.getMessage(),ex);
+        return DefaultResponse.invalidResponse("Json Base64 encode is invalid",400);
     }
 
     @ResponseBody

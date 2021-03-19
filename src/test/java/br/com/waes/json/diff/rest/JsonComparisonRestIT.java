@@ -6,7 +6,6 @@ import br.com.waes.json.diff.repositories.JsonComparisonRepository;
 import br.com.waes.json.diff.utils.IntegrationBaseTest;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

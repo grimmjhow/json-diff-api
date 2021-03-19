@@ -17,4 +17,5 @@ public class JsonComparisonDto {
     private String content = "";
     @Builder.Default
     private String base64Encode = "";
+
 }
