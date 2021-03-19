@@ -1,7 +1,0 @@
-br/com/waes/json/diff/rest/JsonComparisonRestIT.class
-br/com/waes/json/diff/services/Base64ServiceImplTest.class
-br/com/waes/json/diff/ApplicationTests.class
-br/com/waes/json/diff/services/JsonDiffServiceImplTest.class
-br/com/waes/json/diff/utils/BaseTest.class
-br/com/waes/json/diff/usecase/JsonDiffReportImplTest.class
-br/com/waes/json/diff/utils/IntegrationBaseTest.class
