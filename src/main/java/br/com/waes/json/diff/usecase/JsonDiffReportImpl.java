@@ -53,11 +53,10 @@ public class JsonDiffReportImpl implements JsonDiffReport {
     }
 
     /**
-     * Create a report comparing both json sides and indicate
-     * if they are:
-     *      different size,
-     *      same size, but different content
-     *      or equal.
+     * Creates a report comparing both sides, indicating whether they are:
+     *      <li>different sizes,</li>
+     *      <li>same size, but different content showing the differences</li>
+     *      <li>or equal.</li>
      * @param left Valid left {@link JsonComparison} side
      * @param right Valid Right {@link JsonComparison} side
      * @return A {@link JsonComparisonReportDto} with all differences
