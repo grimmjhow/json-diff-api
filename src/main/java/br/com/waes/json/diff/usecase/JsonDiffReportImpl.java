@@ -17,6 +17,13 @@ import org.springframework.stereotype.Service;
 
 import static br.com.waes.json.diff.model.ComparisonStatus.*;
 
+/**
+ * Specific implementation of {@link JsonDiffReport}
+ * <p>
+ *     Responsible to compare and create a report
+ *     with all left and right side differences
+ * </p>
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -25,8 +32,18 @@ public class JsonDiffReportImpl implements JsonDiffReport {
     private final JsonDiffService service;
     private final JsonValidator validator;
 
+    /**
+     * Compares left and right side and produce a report with the differences.
+     * <p>
+     *     This method could thrown an exception if there isn't the both sides saved
+     * </p>
+     * @param id Valid {@link JsonComparison} Id
+     * @return A {@link JsonComparisonReportDto} with all left and right side
+     * differences as well as the original content of both sides
+     */
     @Override
     public JsonComparisonReportDto executeJsonComparison(long id) {
+
         Pair<JsonComparison, JsonComparison> leftAndRightSide = this.service.getLeftAndRightSide(id);
 
         JsonComparison left = leftAndRightSide.getFirst();
@@ -35,6 +52,16 @@ public class JsonDiffReportImpl implements JsonDiffReport {
         return getJsonComparisonReportDto(left, right);
     }
 
+    /**
+     * Create a report comparing both json sides and indicate
+     * if they are:
+     *      different size,
+     *      same size, but different content
+     *      or equal.
+     * @param left Valid left {@link JsonComparison} side
+     * @param right Valid Right {@link JsonComparison} side
+     * @return A {@link JsonComparisonReportDto} with all differences
+     */
     public JsonComparisonReportDto getJsonComparisonReportDto(JsonComparison left, JsonComparison right) {
         JsonObject leftObject = this.service.convertToJsonObject(left.getContent());
         JsonObject rightObject = this.service.convertToJsonObject(right.getContent());

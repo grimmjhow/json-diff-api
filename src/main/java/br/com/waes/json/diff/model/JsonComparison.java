@@ -12,6 +12,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import java.util.UUID;
 
+/**
+ * Entity to represent a side in a Json Struct comparison.
+ * <p>It can assume Left or Right comparison with the attribute {@link DiffSide}</p>
+ */
 @Data
 @Entity
 @NoArgsConstructor
